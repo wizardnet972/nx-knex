@@ -1,0 +1,34 @@
+{
+  "root": "libs/my-knex",
+  "sourceRoot": "libs/my-knex/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/my-knex",
+        "tsConfig": "libs/my-knex/tsconfig.lib.json",
+        "packageJson": "libs/my-knex/package.json",
+        "main": "libs/my-knex/src/index.ts",
+        "assets": ["libs/my-knex/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/my-knex/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/my-knex"],
+      "options": {
+        "jestConfig": "libs/my-knex/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
