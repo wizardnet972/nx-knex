@@ -7,5 +7,7 @@ export const createConnection = () => {
     },
   });
 
+  console.log({ inCreateConnection: ins.customSelect })
+
   return ins;
 };
